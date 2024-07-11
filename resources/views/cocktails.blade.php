@@ -6,24 +6,16 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title fw-semibold">{{ $cocktail->Nome }}</h5>
+                            <h5 class="card-title fw-semibold">{{ $cocktail->name }}</h5>
                             <div class="mb-2">
-                                <strong>Partenza:</strong> {{ $cocktail->Categoria }}
+                                <strong>Ingredienti:</strong> {{ $cocktail->ingredients }}
                             </div>
                             <div class="mb-2">
-                                <strong>Arrivo:</strong> {{ $cocktail->Ingredienti }}
+                                <strong>Descrizione:</strong> {{ $cocktail->description }}
                             </div>
                             <div class="mb-2">
-                                <strong>Data partenza:</strong>
-                                {{ $cocktail->Istruzioni }}
-                            </div>
-                            <div class="mb-2">
-                                <strong>Data arrivo:</strong>
-                                {{ $cocktail->Decorazione }}
-                            </div>
-                            <div class="mb-2">
-                                <strong>Orario partenza:</strong>
-                                {{ $cocktail->Origine }}
+                                <strong>Origine:</strong>
+                                {{ $cocktail->origin }}
                             </div>
 
                             <a href="#" class="btn btn-success">Seleziona</a>
