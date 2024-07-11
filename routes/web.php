@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\CocktailsController;
+use App\Http\Controllers\Guest\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//rotta per la paggina welcome di home
+Route::get('/', [WelcomeController::class, 'index']);
+//rotta per la paggina dei cocktails
+Route::get('/cocktails', [CocktailsController::class, 'index']);
