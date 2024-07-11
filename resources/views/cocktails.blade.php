@@ -24,5 +24,6 @@
                 </div>
             @endforeach
         </div>
+        <a href="#" class="btn btn-success">Torna su</a>
     </div>
 @endsection
