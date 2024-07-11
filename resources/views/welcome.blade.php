@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Laravel Template</h1>
+    <h1>Ciao mondooooo</h1>
     <img src="{{ Vite::asset('resources/img/logo.jpg') }}" alt="pic">
 </body>
 
