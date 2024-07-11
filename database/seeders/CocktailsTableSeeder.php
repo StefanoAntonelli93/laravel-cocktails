@@ -14,15 +14,15 @@ class CocktailsTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             // creo record casuali con Faker
             $cocktail = new Cocktail();
-
-            $cocktail->Ingredienti = $faker->company();
-            $cocktail->Istruzioni = $faker->city();
-            $cocktail->Categoria = $faker->city();
-            $cocktail->Decorazione = $faker->time();
-            $cocktail->Origine = $faker->time();
+            $cocktail->Nome = $faker->company();
+            $cocktail->Ingredienti = $faker->text();
+            $cocktail->Istruzioni = $faker->paragraphs();
+            $cocktail->Categoria = $faker->text();
+            $cocktail->Decorazione = $faker->text();
+            $cocktail->Origine = $faker->text();
 
 
             $cocktail->save();
