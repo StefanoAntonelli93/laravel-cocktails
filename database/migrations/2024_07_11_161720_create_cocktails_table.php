@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('cocktails', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 40);
+            $table->string('ingredients');
+            $table->string('origin');
+            $table->string('description');
             $table->timestamps();
         });
     }
