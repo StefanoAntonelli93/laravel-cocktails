@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCocktailRequest;
 use App\Models\Cocktail;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdateCocktailRequest;
@@ -27,13 +28,13 @@ class BarController extends Controller
      */
     public function create()
     {
-        //
+        return view('guest.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCocktailRequest $request)
     {
 
         $data = $request->validated();
@@ -44,11 +45,11 @@ class BarController extends Controller
 
         $cocktail->name = $data['name'];
         $cocktail->description = $data['description'];
-        $cocktail->ingredient = $data['ingredient'];
+        $cocktail->ingredients = $data['ingredients'];
         $cocktail->origin = $data['origin'];
         $cocktail->save();
 
-        return redirect()->route('guest.index');
+        return redirect()->route('cocktails.index');
     }
 
     /**
