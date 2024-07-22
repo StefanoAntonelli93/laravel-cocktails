@@ -51,7 +51,8 @@ class BarController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cocktail = Cocktail::findOrFail($id);
+        return view('guest.edit', compact('cocktail'));
     }
 
     /**
@@ -59,7 +60,6 @@ class BarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
