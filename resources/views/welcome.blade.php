@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('main')
-    <div class="container vh-100 py-5">
+    <div class="container bg-info-subtle vh-100 py-5 d-flex flex-column justify-content-center align-items-center gap-5">
         <h1>
-            Home-page Cocktails
+            "La pace nel mondo risiede dentro un cocktail."
 
         </h1>
         <a href="{{ route('cocktails.index') }}" class="btn btn-primary">Vai alla lista cocktails</a>

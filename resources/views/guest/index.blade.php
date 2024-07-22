@@ -1,12 +1,15 @@
 @extends('layouts.app')
-
+{{-- cambio titolo  --}}
+@section('page-title')
+    Bar Alan Cocktails
+@endsection
 @section('main')
     <div class="container mt-5">
         <h1 class="text-center my-5"><strong>I nostri Cocktails</strong></h1>
         <hr>
         <div class="d-flex justify-content-between align-items-center mb-5">
             <h4>Crea un nuovo Cocktail</h4>
-            <a href="{{ route('cocktails.create') }}" class="btn btn-secondary m-3">Crea Nuovo</a>
+            <a href="{{ route('cocktails.create') }}" class="btn btn-primary m-3">Crea Nuovo</a>
 
         </div>
 
@@ -38,6 +41,9 @@
                 </div>
             @endforeach
         </div>
-        <a href="#" class="btn btn-success">Torna su</a>
+        <div class="d-flex justify-content-center py-3">
+            <a href="#" class="btn btn-primary">Torna su</a>
+        </div>
+
     </div>
 @endsection

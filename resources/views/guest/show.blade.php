@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('page-title')
+    Dettagli Cocktails
+@endsection
 @section('main')
     <div class="container vh-100 mt-5">
         <h2 class="text-center py-5">Dettagli Cocktail</h2>
