@@ -10,8 +10,6 @@ class CocktailsController extends Controller
 {
     public function index()
     {
-        $cocktails = Cocktail::all();
-
-        return view('guest.index', compact('cocktails'));
+        return view('welcome');
     }
 }

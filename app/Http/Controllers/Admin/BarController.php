@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Cocktail;
+
 
 class BarController extends Controller
 {
@@ -11,7 +14,9 @@ class BarController extends Controller
      */
     public function index()
     {
-        //
+        $cocktails = Cocktail::all();
+
+        return view('guest.index', compact('cocktails'));
     }
 
     /**
