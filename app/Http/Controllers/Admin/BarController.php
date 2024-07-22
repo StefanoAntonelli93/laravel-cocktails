@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Cocktail;
 use Illuminate\Http\Request;
+use App\Models\Cocktail;
+
 
 class BarController extends Controller
 {
