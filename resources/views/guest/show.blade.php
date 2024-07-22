@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-around card-footer">
-                    <a href="{{ route('cocktails.index') }}" class="btn btn-primary">Torna alla Home</a>
+                    <a href="{{ route('cocktails.index') }}" class="btn btn-primary">Torna ai cocktails</a>
                     <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning">Modifica</a>
                     <a href="{{ route('cocktails.destroy', $cocktail->id) }}" class="btn btn-danger">Elimina</a>
                 </div>

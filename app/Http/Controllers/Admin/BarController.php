@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Cocktail;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdateCocktailRequest;
 use Illuminate\Http\Request;
 
 
@@ -35,19 +36,19 @@ class BarController extends Controller
     public function store(Request $request)
     {
 
+        $data = $request->validated();
 
-        $data = $request->all();
 
 
-        $new_cocktail = new Cocktail();
+        $cocktail = new Cocktail();
 
-        $new_cocktail->name = $data['name'];
-        $new_cocktail->description = $data['description'];
-        $new_cocktail->ingredient = $data['ingredient'];
-        $new_cocktail->origin = $data['origin'];
-        $new_cocktail->save();
+        $cocktail->name = $data['name'];
+        $cocktail->description = $data['description'];
+        $cocktail->ingredient = $data['ingredient'];
+        $cocktail->origin = $data['origin'];
+        $cocktail->save();
 
-        return redirect()->route('guest.index', $new_cocktail->id);
+        return redirect()->route('guest.index');
     }
 
     /**
@@ -72,21 +73,15 @@ class BarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCocktailRequest $request, $id)
     {
-        // $data = $request->validated();
-        $data = $request->all();
+        $data = $request->validated();
 
         $cocktail = Cocktail::findOrFail($id);
 
+        $cocktail->update($data);
 
-        $cocktail->name = $data['name'];
-        $cocktail->description = $data['description'];
-        $cocktail->ingredient = $data['ingredient'];
-        $cocktail->origin = $data['origin'];
-        $cocktail->save();
-
-        return redirect()->route('guest.index', $cocktail->id);
+        return redirect()->route('cocktails.index');
     }
 
     /**

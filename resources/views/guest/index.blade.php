@@ -30,7 +30,8 @@
                         <div class="d-flex justify-content-around card-footer">
                             <a href="{{ route('cocktails.show', $cocktail) }}" class="btn btn-primary m-3"><i
                                     class="fa-solid fa-magnifying-glass"></i></a>
-                            <a href="" class="btn btn-warning m-3"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning m-3"><i
+                                    class="fa-solid fa-pen"></i></a>
                             <a href="" class="btn btn-danger m-3"><i class="fa-solid fa-bomb"></i></a>
                         </div>
                     </div>

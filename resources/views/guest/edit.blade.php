@@ -9,20 +9,21 @@
                 </h1>
             </div>
             <form action="{{ route('cocktails.update', $cocktail->id) }}" method="POST">
-                @method('PUT')
                 @csrf
+                @method('PUT')
+
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="text-e" for="exampleFormControlInput1" class="form-label">Nome
                                 cocktail</label>
-                            <input type="text" class="form-control" name="title"
-                                value="{{ old('title', $cocktail->name) }}">
+                            <input type="text" class="form-control" name="name"
+                                value="{{ old('name', $cocktail->name) }}">
                         </div>
                         <div class="mb-3">
                             <label class="text-e" for="exampleFormControlInput1" class="form-label">Ingredienti</label>
-                            <input type="text" class="form-control" name="title"
-                                value="{{ old('title', $cocktail->ingredients) }}">
+                            <input type="text" class="form-control" name="ingredients"
+                                value="{{ old('ingredients', $cocktail->ingredients) }}">
                         </div>
                         <div class="mb-3">
                             <label class="text-e" for="exampleFormControlInput1" class="form-label">Descrizione</label>
@@ -30,15 +31,9 @@
                                 value="{{ old('description', $cocktail->description) }}">
                         </div>
                         <div class="mb-3">
-                            <label class="text-e" for="exampleFormControlInput1" class="form-label">Inserisci
-                                immagine</label>
-                            <input type="text" class="form-control" name="thumb"
-                                value="{{ old('thumb', $cocktail->thumb) }}">
-                        </div>
-                        <div class="mb-3">
                             <label class="text-e" for="exampleFormControlInput1" class="form-label">Origine</label>
-                            <input type="text" class="form-control" name="price"
-                                value="{{ old('price', $cocktail->origin) }}">
+                            <input type="text" class="form-control" name="origin"
+                                value="{{ old('origin', $cocktail->origin) }}">
                         </div>
                     </div>
                 </div>
@@ -46,7 +41,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <button class="btn btn-primary">Modifica</button>
                     <div class="my-5 px-3">
-                        <a class="btn btn-primary text-white" href="{{ route('cocktails.index') }}">Torna alla Home</a>
+                        <a class="btn btn-primary text-white" href="{{ route('guest.index') }}">Torna alla Home</a>
                     </div>
                 </div>
             </form>

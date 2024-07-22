@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateCocktailRequest extends FormRequest
+class StoreCocktailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +22,18 @@ class UpdateCocktailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // con Rule possiamo modificare gli altri campi senza errore su title
-            'name' => ['required', 'string', 'min:5', 'max:50', Rule::unique('cocktails')->ignore($this->cocktail)],
+            'name' => 'required|string|min:5|max:50|unique:cocktails',
             'description' => 'string|nullable',
             'ingredients' => 'string|nullable',
             'origin' => 'string|nullable',
-            // si può usare anche l'array per le condizioni oltre il pipe
-            // 
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'title.min' => 'Il titolo è obbligatorio (almeno 5 caratteri)',
+            'title.unique' => 'Questo titolo è già stato usato',
+            'title.max' => 'Max 50 caratteri',
         ];
     }
 }
