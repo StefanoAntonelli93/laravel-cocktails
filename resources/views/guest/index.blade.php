@@ -2,7 +2,14 @@
 
 @section('main')
     <div class="container mt-5">
-        <h1 class="text-center my-5"><strong></strong></h1>
+        <h1 class="text-center my-5"><strong>I nostri Cocktails</strong></h1>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h4>Crea un nuovo Cocktail</h4>
+            <a href="{{ route('cocktails.create') }}" class="btn btn-secondary m-3">Crea Nuovo</a>
+
+        </div>
+
         <div class="row">
             @foreach ($cocktails as $cocktail)
                 <div class="col-md-4 mb-4">
@@ -21,9 +28,10 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-around card-footer">
-                            <a href="#" class="btn btn-primary m-3"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <a href="#" class="btn btn-warning m-3"><i class="fa-solid fa-pen"></i></a>
-                            <a href="#" class="btn btn-danger m-3"><i class="fa-solid fa-bomb"></i></a>
+                            <a href="{{ route('cocktails.show', $cocktail) }}" class="btn btn-primary m-3"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="" class="btn btn-warning m-3"><i class="fa-solid fa-pen"></i></a>
+                            <a href="" class="btn btn-danger m-3"><i class="fa-solid fa-bomb"></i></a>
                         </div>
                     </div>
                 </div>
