@@ -58,8 +58,14 @@ class BarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Cocktail $cocktail)
     {
+        $data = $request->validated();
+        $data = $request->all();
+
+        $cocktail->update($data);
+
+        return redirect()->route('guest.index');
     }
 
     /**
@@ -67,6 +73,8 @@ class BarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cocktails = Cocktail::findOrFail($id);
+        $cocktails->delete();
+        return redirect()->route('cocktails.index');
     }
 }
