@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('main')
-    <div class="container">
+    <div class="container vh-100 py-5">
         <h1>
             Home-page Cocktails
-            <a href="{{ route('guest.index') }}" class="btn btn-secondary">Index</a>
+
         </h1>
-        <a href="{{ route('cocktails.index') }}">vai a</a>
+        <a href="{{ route('cocktails.index') }}" class="btn btn-primary">Vai alla lista cocktails</a>
     </div>
 @endsection

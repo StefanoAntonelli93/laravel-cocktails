@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\BarController;
+
+use App\Http\Controllers\Admin\BarController;
 use App\Http\Controllers\Guest\CocktailsController;
 use App\Http\Controllers\Guest\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //rotta per la paggina welcome di home
-Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index'])->name('guest.index');
 //rotta per la paggina dei cocktails
 // Route::get('/guest/index', [CocktailsController::class, 'index']);
 Route::resource('cocktails', BarController::class);

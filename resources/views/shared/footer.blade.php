@@ -1,1 +1,1 @@
-<footer>Footer</footer>
+<footer>Footer dei cocktails</footer>
