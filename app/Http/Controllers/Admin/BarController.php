@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cocktail;
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 
 
@@ -33,7 +34,20 @@ class BarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $data = $request->all();
+
+
+        $new_cocktail = new Cocktail();
+
+        $new_cocktail->name = $data['name'];
+        $new_cocktail->description = $data['description'];
+        $new_cocktail->ingredient = $data['ingredient'];
+        $new_cocktail->origin = $data['origin'];
+        $new_cocktail->save();
+
+        return redirect()->route('guest.index', $new_cocktail->id);
     }
 
     /**
@@ -58,14 +72,21 @@ class BarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cocktail $cocktail)
+    public function update(Request $request, string $id)
     {
-        $data = $request->validated();
+        // $data = $request->validated();
         $data = $request->all();
 
-        $cocktail->update($data);
+        $cocktail = Cocktail::findOrFail($id);
 
-        return redirect()->route('guest.index');
+
+        $cocktail->name = $data['name'];
+        $cocktail->description = $data['description'];
+        $cocktail->ingredient = $data['ingredient'];
+        $cocktail->origin = $data['origin'];
+        $cocktail->save();
+
+        return redirect()->route('guest.index', $cocktail->id);
     }
 
     /**
