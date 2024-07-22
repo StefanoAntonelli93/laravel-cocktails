@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //rotta per la paggina welcome di home
 Route::get('/', [WelcomeController::class, 'index']);
 //rotta per la paggina dei cocktails
-Route::get('/cocktails', [CocktailsController::class, 'index']);
+Route::get('/guest/index', [CocktailsController::class, 'index']);

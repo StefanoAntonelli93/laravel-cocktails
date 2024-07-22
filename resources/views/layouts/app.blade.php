@@ -19,8 +19,6 @@
         </main>
 
         @include('shared.footer')
-
-
     </div>
 
 </body>
