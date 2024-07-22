@@ -10,16 +10,19 @@
 </head>
 
 <body>
+    @include('shared.header')
+
     <div class="container py-4">
 
-        @include('shared.header')
 
         <main>
             @yield('main')
         </main>
 
-        @include('shared.footer')
     </div>
+
+    @include('shared.footer')
+
 
 </body>
 
