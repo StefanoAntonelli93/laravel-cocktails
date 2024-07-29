@@ -13,6 +13,9 @@ class Cocktail extends Model
         'description',
         'origin',
         'ingredients',
-
     ];
+    public function Ingredient()
+    {
+        return $this->belongsToMany('app\models\Ingredient');
+    }
 }

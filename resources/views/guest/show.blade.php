@@ -9,9 +9,6 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title fw-semibold mt-2 py-3">{{ $cocktail->name }}</h2>
-                    <div class="mb-2">
-                        <strong>Ingredienti:</strong> {{ $cocktail->ingredients }}
-                    </div>
                     <div class="mb-2 py-3">
                         <strong>Descrizione:</strong> {{ $cocktail->description }}
                     </div>
@@ -19,6 +16,14 @@
                         <strong>Origine:</strong>
                         {{ $cocktail->origin }}
                     </div>
+                </div>
+                <div class="mb-2">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        @foreach ($cocktail->ingredients as $ingredient)
+                            <li>{{ $ingredient->name }}</li>
+                        @endforeach
+                    </ul>
                 </div>
                 <div class="d-flex justify-content-around card-footer">
                     <a href="{{ route('cocktails.index') }}" class="btn btn-primary">Torna ai cocktails</a>

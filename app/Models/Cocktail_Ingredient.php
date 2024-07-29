@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ingredient extends Model
+class Cocktail_Ingredient extends Model
 {
     use HasFactory;
-    public function Cocktail()
-    {
-        return $this->belongsToMany('app\models\Cocktail');
-    }
+    //istruisco laravel sulla tabella da usare
+    protected $table = 'cocktails_ingredients';
 }
